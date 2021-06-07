@@ -30,7 +30,7 @@ fuck dangke
 
 2. 运行代码：
 
-3. 运行 ```python main.py [URL]``` 其中[URL]为上一步保存的链接。不加引号。如果输出都为true，那么你就成功了。
+3. 运行 ```python post_apply.py [URL]``` 其中[URL]为上一步保存的链接。不加引号。如果输出都为true，那么你就成功了。
 
 ![image](figures/p5.png)
 
