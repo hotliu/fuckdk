@@ -8,7 +8,7 @@
 
 ### 前期准备
 
-1. 在chrome中登录党课系统后，随便点进一个视频，先不要播放。打开chrome控制台（F12），切换至network模式。勾选preserve log按钮。点击“XHR”，使得请求只保留XHR请求方便查看。（见下图红框处）
+1. 在chrome中登录党课系统后，随便点进一个视频，先不要播放。打开chrome控制台（F12），切换至network模式。勾选preserve log按钮。点击“XHR”，使得控制台只保留XHR请求，方便我们查看。（见下图红框处）
 
 ![image](figures/p1.png)
 
