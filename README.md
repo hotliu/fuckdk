@@ -16,7 +16,7 @@
 
 ![image](figures/p2.png)
 
-3. 打开```post_apply.py```。修改"全局信息"下面的三个变量，分别是你的姓名，你的学号，以及你上一步的cookie。这些变量是让程序模拟登录这个系统的。
+3. 打开```start.py```。修改"全局信息"下面的三个变量，分别是你的姓名，你的学号，以及你上一步的cookie。这些变量是让程序模拟登录这个系统的。
 
 以上三步做完之后，ok，我们可以开始愉快的刷视频了。
 
@@ -28,10 +28,10 @@
 ![image](figures/p4.png)
 
 
-2. 运行 ```python post_apply.py [URL]``` 其中[URL]为上一步保存的链接，不加引号。如果输出中的suc都为true(如下)，那么你就成功了。
+2. 运行 ```python start.py [URL]``` 其中[URL]为上一步保存的链接，不加引号。如果输出中的suc都为true(如下)，那么你就成功了。
 
 ```
-python post_apply.py -url http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1254
+python start.py -url http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1254
 740147cd653efec94809844c03b2dfsd009aMTI1NA== 95bd67d597b6e8d2804b09d53b65a9fc 1254 251
 {"suc":true,"data":{"create_time":1623057102,"videokey":"1254","time":350,"long_time":"1533"}}
 {"suc":true,"data":{"videokey":"1254","time":"763","long_time":"1533"}}
