@@ -46,6 +46,7 @@ conid = re.findall(r"var conid=\"(.+?)\";",content)[0]
 sing = re.findall(r"var sing=\"(.+?)\";",content)[0]
 vid = re.findall(r"vid:(.+?),tid:",content)[0]
 tid = re.findall(r"tid:(.+?)},function",content)[0]
+hours = re.findall(r"var hours=\"(.+?)\";",content)[0]
 
 av_sh = f'curl --location --request POST \'http://dxonline.ruc.edu.cn/index.php?s=/Index/add_videonum.html\' \
 --header \'Accept: */*\think \' \
@@ -69,6 +70,6 @@ p_sh = f"curl --location --request POST 'http://dxonline.ruc.edu.cn/index.php?s=
     --header 'Accept: */*' --header 'X-Requested-With: XMLHttpRequest' --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) \
         AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36' --header 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
             --header 'Cookie: PHPSESSID={PHPSESSID}; wyQiantai_name={wyQiantai_name}; wyQiantai_num={wyQiantai_num}' \
-                --data-urlencode \'conid={conid}==' --data-urlencode 'ct={ct}' --data-urlencode 'hours=2.5' \
+                --data-urlencode \'conid={conid}==' --data-urlencode 'ct={ct}' --data-urlencode 'hours={hours}' \
                     --data-urlencode 'name={wyQiantai_name}' --data-urlencode 'num={wyQiantai_num}' --data-urlencode 'sing={sing}'"
 os.system(p_sh)
