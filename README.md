@@ -27,7 +27,7 @@ fuck dangxiao
 ![image](figures/p4.png)
 
 2.	运行代码：
-Python main.py [URL]
+```python main.py [URL]```
 其中url为上一步保存的链接。不加引号。
 
 如果输出都为true，那么你就成功了。
