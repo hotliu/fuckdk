@@ -61,7 +61,7 @@ def post_apply(videokey, videonum, ct):
         }
     # =; PHPSESSID=esrr3scjj3rvjucsn8t4dekaot
     cookies={
-        'PHPSESSID':'5fg372a61unqbon83l20gn2tk5',\
+        'PHPSESSID':PHPSESSID,\
         'wyQiantai_name':wyQiantai_name,
         'wyQiantai_num':wyQiantai_num
     }
