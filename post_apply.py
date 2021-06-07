@@ -8,6 +8,11 @@ parser = argparse.ArgumentParser(description='paper search')
 parser.add_argument('-url',type=str)
 args = parser.parse_args()
 
+# 全局信息
+wyQiantai_name = urllib.parse.quote("马正一")
+wyQiantai_num = "2019101404"
+PHPSESSID = "9q9q68r10d7hit1s2pt9ilhnf0"
+
 def myrequest(url):
     querystring = {}
     method = "GET"
@@ -31,10 +36,7 @@ def myrequest(url):
 
     return rtxt   
 
-# 全局信息
-wyQiantai_name = urllib.parse.quote("马正一")
-wyQiantai_num = "2019101404"
-PHPSESSID = "9q9q68r10d7hit1s2pt9ilhnf0"
+
 
 pageurl = args.url
 content = myrequest(pageurl)
