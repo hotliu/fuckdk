@@ -32,7 +32,7 @@ def getpage(url):
 # 全局信息
 wyQiantai_name = urllib.parse.quote("马正一")
 wyQiantai_num = "2019101404"
-PHPSESSID = "5fg372a61unqbon83l20gn2tk5"
+PHPSESSID = "1234567890abcdefgh"
 
 pageurl = args.url
 content = getpage(pageurl)
