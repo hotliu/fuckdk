@@ -4,6 +4,17 @@
 
 **低调使用！**
 
+## Preinstallation
+
+Win/Linux/MacOS应该都可以。然后你需要一个python3的环境。
+
+用下边的命令装一下requests包。
+
+```pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple```
+
+
+
+
 ## How To Use
 
 ### 前期准备：需要给程序配一下cookie来模拟系统登录
