@@ -6,7 +6,7 @@
 
 ## Preinstallation
 
-Win/Linux/MacOS应该都可以。然后你需要一个python3的环境。
+Win/Linux/MacOS都ok。然后你需要一个python3的环境。
 
 用下边的命令装一下requests包。
 
