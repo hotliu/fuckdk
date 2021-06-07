@@ -1,7 +1,5 @@
 # fuckdk
 
-fuck dangke
-
 快速观看党课的小程序
 
 **低调使用！**
