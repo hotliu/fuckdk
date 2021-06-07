@@ -30,9 +30,9 @@ def getpage(url):
     return rtxt
 
 # 全局信息
-wyQiantai_name = urllib.parse.quote("这里要填你的姓名")
-wyQiantai_num = "这里要填你的学号"
-PHPSESSID = "这里要填你的cookie"
+wyQiantai_name = urllib.parse.quote("马正一")
+wyQiantai_num = "2019101404"
+PHPSESSID = "5fg372a61unqbon83l20gn2tk5"
 
 pageurl = args.url
 content = getpage(pageurl)
@@ -61,7 +61,7 @@ def post_apply(videokey, videonum, ct):
         }
     # =; PHPSESSID=esrr3scjj3rvjucsn8t4dekaot
     cookies={
-        'PHPSESSID':PHPSESSID,\
+        'PHPSESSID':'5fg372a61unqbon83l20gn2tk5',\
         'wyQiantai_name':wyQiantai_name,
         'wyQiantai_num':wyQiantai_num
     }
