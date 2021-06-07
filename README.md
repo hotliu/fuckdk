@@ -30,8 +30,17 @@ fuck dangke
 
 2. 运行代码：
 
-3. 运行 ```python post_apply.py [URL]``` 其中[URL]为上一步保存的链接。不加引号。如果输出都为true，那么你就成功了。
+3. 运行 ```python post_apply.py [URL]``` 其中[URL]为上一步保存的链接。不加引号。如果输出类似如下，那么你就成功了。
 
-![image](figures/p5.png)
+```
+python post_apply.py -url http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1254
+740147cd653efec94809844c03b2dfsd009aMTI1NA== 95bd67d597b6e8d2804b09d53b65a9fc 1254 251
+{"suc":true,"data":{"create_time":1623057102,"videokey":"1254","time":350,"long_time":"1533"}}
+{"suc":true,"data":{"videokey":"1254","time":"763","long_time":"1533"}}
+{"suc":true,"data":{"videokey":"1254","time":"1329","long_time":"1533"}}
+{"suc":true,"data":{"videokey":"1254","time":0,"long_time":"1533"}}
+{"suc":true,"msg":"\u5b66\u65f6\u52a0\u5165\u6210\u529f"}
+
+```
 
 
