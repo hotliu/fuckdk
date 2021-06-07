@@ -19,7 +19,6 @@ def myrequest(url):
         'cache-control': "no-cache",
         'postman-token': "524d22a5-6f66-096b-08df-ccef375e8ebc",
         }
-    # =; PHPSESSID=esrr3scjj3rvjucsn8t4dekaot
     cookies={
         'PHPSESSID':PHPSESSID,\
         'wyQiantai_name':wyQiantai_name,
