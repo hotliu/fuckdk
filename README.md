@@ -26,9 +26,8 @@
 
 ![image](figures/p4.png)
 
-2. 运行代码：
 
-3. 运行 ```python post_apply.py [URL]``` 其中[URL]为上一步保存的链接。不加引号。如果输出类似如下，那么你就成功了。
+2. 运行 ```python post_apply.py [URL]``` 其中[URL]为上一步保存的链接。不加引号。如果输出类似如下，那么你就成功了。
 
 ```
 python post_apply.py -url http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1254
