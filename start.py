@@ -9,9 +9,9 @@ parser.add_argument('-url',type=str)
 args = parser.parse_args()
 
 # 全局信息
-wyQiantai_name = urllib.parse.quote("马正一")
-wyQiantai_num = "2019101404"
-PHPSESSID = "9q9q68r10d7hit1s2pt9ilhnf0"
+wyQiantai_name = urllib.parse.quote("这里填上你的姓名")
+wyQiantai_num = "这里填上你的学号"
+PHPSESSID = "这里填上你的COOKIE中的PHPSESSID"
 
 def myrequest(url):
     querystring = {}
