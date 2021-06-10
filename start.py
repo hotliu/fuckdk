@@ -13,9 +13,9 @@ args = parser.parse_args()
 
 # 全局信息 
 # 下面这三个变量是为了让程序能登进这个系统的 不会干别的事情 所以放心填:)
-wyQiantai_name = urllib.parse.quote("马正一")
-wyQiantai_num = "2019101404"
-PHPSESSID = "76eca1v8mku8cr5nen585q0vn7"
+wyQiantai_name = urllib.parse.quote("这里要填你的姓名")
+wyQiantai_num = "这里要填你的学号"
+PHPSESSID = "这里要填你的PHPSESSID"
 
 def myrequest(url):
     querystring = {}
