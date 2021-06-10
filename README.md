@@ -4,12 +4,13 @@
 
 刷的开心！珍惜时间去做更有意义的事情吧！
 
-
 **低调使用！**
 
 ## Preinstallation
 
-Win/Linux/MacOS都ok。然后你需要一个python3的环境。
+Win/Linux/MacOS都ok。
+
+然后你需要一个python3.6+的环境。
 
 用下边的命令装一下requests包。
 
@@ -52,8 +53,6 @@ Win/Linux/MacOS都ok。然后你需要一个python3的环境。
 ```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1486.html```
 
 当然，你也可以只刷一个视频，只需要把start和end填同一个id就好了。
-
-
 
 
 ## Notes
