@@ -8,7 +8,8 @@ parser = argparse.ArgumentParser(description='paper search')
 parser.add_argument('-url',type=str)
 args = parser.parse_args()
 
-# 全局信息
+# 全局信息 
+# 下面这三个变量是为了让程序能登进这个系统的 不会干别的事情 所以放心填:)
 wyQiantai_name = urllib.parse.quote("这里填上你的姓名")
 wyQiantai_num = "这里填上你的学号"
 PHPSESSID = "这里填上你的COOKIE中的PHPSESSID"
