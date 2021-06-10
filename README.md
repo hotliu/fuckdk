@@ -34,31 +34,22 @@ Win/Linux/MacOS都ok。然后你需要一个python3的环境。
 
 ### 刷视频
 
-#### 刷法1：使用懒人脚本刷
-
-```bash batch_start.sh```
+```python start.py -start 1486 -end 1540```
 
 若输出的suc都为true，那么就ok了！你的时长应该已经加了不少了:)
 
-如果你想刷更多的视频，你可以更改脚本里的URL中的```$idxstart```与```$idxend```。这个idx是和每个视频页面的链接里的id对应的，如```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1093.html```
+如果你想刷更多的视频，你可以更改运行命令中的```start```与```end```参数。
 
-#### 刷法2：一个一个刷，更有操作感
+这两个参数对应了你想刷的视频的开始ID与结束ID。
 
-1. 在学习中心选一个**你还没有看**的的视频，点进去，复制他的链接，如下图。
+例如上边的命令中我们将ID在[1486,1540]之间的视频都刷了
 
-![image](figures/p4.png)
+这个idx是和每个视频页面的链接里的id对应的，如```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1486.html```
 
+当然，你也可以只刷一个视频，只需要把start和end填同一个ID就好了。
 
-2. 运行 ```python start.py [URL]``` 其中[URL]为上一步保存的链接，不加引号。如果输出中的suc都为true(如下)，那么你就成功了。
+刷的开心！珍惜时间去做更有意义的事情吧！
 
-```
-python start.py -url http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1254
-740147cd653efec94809844c03b2dfsd009aMTI1NA== 95bd67d597b6e8d2804b09d53b65a9fc 1254 251
-{"suc":true,"data":{"create_time":1623057102,"videokey":"1254","time":350,"long_time":"1533"}}
-{"suc":true,"data":{"videokey":"1254","time":"763","long_time":"1533"}}
-{"suc":true,"data":{"videokey":"1254","time":"1329","long_time":"1533"}}
-{"suc":true,"data":{"videokey":"1254","time":0,"long_time":"1533"}}
-{"suc":true,"msg":"\u5b66\u65f6\u52a0\u5165\u6210\u529f"}
 
 ```
 

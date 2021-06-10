@@ -4,15 +4,18 @@ import json
 import os
 import urllib
 import argparse
-parser = argparse.ArgumentParser(description='paper search')
-parser.add_argument('-url',type=str)
+import traceback
+
+parser = argparse.ArgumentParser(description='fuck dxonline')
+parser.add_argument('-start',type=int)
+parser.add_argument('-end',type=int)
 args = parser.parse_args()
 
 # 全局信息 
 # 下面这三个变量是为了让程序能登进这个系统的 不会干别的事情 所以放心填:)
-wyQiantai_name = urllib.parse.quote("这里填上你的姓名")
-wyQiantai_num = "这里填上你的学号"
-PHPSESSID = "这里填上你的COOKIE中的PHPSESSID"
+wyQiantai_name = urllib.parse.quote("马正一")
+wyQiantai_num = "2019101404"
+PHPSESSID = "76eca1v8mku8cr5nen585q0vn7"
 
 def myrequest(url):
     querystring = {}
@@ -38,39 +41,63 @@ def myrequest(url):
     return rtxt   
 
 
+def fuck_a_dk(url):
+    # 首先，我们抓取这个视频的页面
+    content = myrequest(url)
 
-pageurl = args.url
-content = myrequest(pageurl)
-# print(content)
 
-conid = re.findall(r"var conid=\"(.+?)\";",content)[0]
-sing = re.findall(r"var sing=\"(.+?)\";",content)[0]
-vid = re.findall(r"vid:(.+?),tid:",content)[0]
-tid = re.findall(r"tid:(.+?)},function",content)[0]
-hours = re.findall(r"var hours=\"(.+?)\";",content)[0]
+    # 我们从这个页面里抽几个id，用来伪造看完视频的请求。
+    conid = re.findall(r"var conid=\"(.+?)\";",content)[0]
+    sing = re.findall(r"var sing=\"(.+?)\";",content)[0]
+    vid = re.findall(r"vid:(.+?),tid:",content)[0]
+    tid = re.findall(r"tid:(.+?)},function",content)[0]
+    hours = re.findall(r"var hours=\"(.+?)\";",content)[0]
 
-av_sh = f'curl --location --request POST \'http://dxonline.ruc.edu.cn/index.php?s=/Index/add_videonum.html\' \
---header \'Accept: */*\think \' \
---header \'X-Requested-With: XMLHttpRequest\' \
---header \'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36\' \
---header \'Content-Type: application/x-www-form-urlencoded; charset=UTF-8\' \
---header \'Cookie: PHPSESSID={PHPSESSID}; wyQiantai_name={wyQiantai_name}; wyQiantai_num={wyQiantai_num}\' \
---data-urlencode \'tid={tid}\' \
---data-urlencode \'vid={vid}\''
-os.system(av_sh)
-# d = post_apply(vid, 1, 0)
-d = myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=1&ct=0")
-d = json.loads(d)
-print(d)
-ct = d['data']['create_time']
-print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=2&ct={ct}"))
-print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=3&ct={ct}"))
-print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=4&ct={ct}"))
+    # 首先我们伪造请求页面初始化的一个接口
+    av_sh = f'curl --location --request POST \'http://dxonline.ruc.edu.cn/index.php?s=/Index/add_videonum.html\' \
+    --header \'Accept: */*\think \' \
+    --header \'X-Requested-With: XMLHttpRequest\' \
+    --header \'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36\' \
+    --header \'Content-Type: application/x-www-form-urlencoded; charset=UTF-8\' \
+    --header \'Cookie: PHPSESSID={PHPSESSID}; wyQiantai_name={wyQiantai_name}; wyQiantai_num={wyQiantai_num}\' \
+    --data-urlencode \'tid={tid}\' \
+    --data-urlencode \'vid={vid}\''
+    os.system(av_sh)
 
-p_sh = f"curl --location --request POST 'http://dxonline.ruc.edu.cn/index.php?s=/Index/gethours.html' \
-    --header 'Accept: */*' --header 'X-Requested-With: XMLHttpRequest' --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) \
-        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36' --header 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
-            --header 'Cookie: PHPSESSID={PHPSESSID}; wyQiantai_name={wyQiantai_name}; wyQiantai_num={wyQiantai_num}' \
-                --data-urlencode \'conid={conid}==' --data-urlencode 'ct={ct}' --data-urlencode 'hours={hours}' \
-                    --data-urlencode 'name={wyQiantai_name}' --data-urlencode 'num={wyQiantai_num}' --data-urlencode 'sing={sing}'"
-os.system(p_sh)
+    # 然后，我们假装开始播放视频
+    d = myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=1&ct=0")
+    d = json.loads(d)
+    print(d)
+    ct = d['data']['create_time']
+
+    # 接下来，我们假装点过了三次
+    print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=2&ct={ct}"))
+    print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=3&ct={ct}"))
+    print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=4&ct={ct}"))
+
+    # 最后，我们假装看完了
+    p_sh = f"curl --location --request POST 'http://dxonline.ruc.edu.cn/index.php?s=/Index/gethours.html' \
+        --header 'Accept: */*' --header 'X-Requested-With: XMLHttpRequest' --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) \
+            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36' --header 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+                --header 'Cookie: PHPSESSID={PHPSESSID}; wyQiantai_name={wyQiantai_name}; wyQiantai_num={wyQiantai_num}' \
+                    --data-urlencode \'conid={conid}==' --data-urlencode 'ct={ct}' --data-urlencode 'hours={hours}' \
+                        --data-urlencode 'name={wyQiantai_name}' --data-urlencode 'num={wyQiantai_num}' --data-urlencode 'sing={sing}'"
+    os.system(p_sh)
+    # fuck success!
+
+def main():
+    startid = args.start
+    endid = args.end
+    for _id in range(startid, endid + 1):
+        try:
+            pageurl = f"http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/{_id}.html"
+            fuck_a_dk(pageurl)
+            print(f"the {pageurl} success!")
+        except:
+            print(f"error while fuck {pageurl}")
+            traceback.print_exc()
+
+if __name__ == "__main__":
+    main()
+
+
