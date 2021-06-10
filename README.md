@@ -60,6 +60,6 @@ python start.py -url http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id
 
 ```
 
-### Note
+### Notes
 
 你的Cookie过一段时间会过期的（你可以类比成微人大，你如果过好几个小时再来，往往也会让你重新登陆一下）。因此，**你如果一两天后想继续刷视频，你是需要重新第1-3步获取新PHPSESSID，然后填到代码里的！**
