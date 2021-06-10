@@ -22,7 +22,7 @@ Win/Linux/MacOS都ok。然后你需要一个python3的环境。
 
 ### 前期准备：需要给程序配一下cookie来模拟系统登录
 
-1. 在chrome中登录党课系统后，随便点进一个视频，**先不要播放**。打开chrome控制台（F12），切换至network模式。勾选preserve log按钮。点击“XHR”，这样我们会把除了XHR请求外的其他请求过滤掉，可以方便我们查看。（见下图红框处）
+1. 在chrome中登录党课系统后，随便点进一个视频，**先不要播放**。打开chrome控制台（F12），切换至network模式。勾选preserve log按钮。点击“XHR”，这样会把除了XHR请求外的其他请求过滤掉，更加方便我们查看。（见下图红框处）
 
 ![image](figures/p1.png)
 
