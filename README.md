@@ -38,7 +38,9 @@ Win/Linux/MacOS都ok。然后你需要一个python3的环境。
 
 ```bash batch_start.sh```
 
-若输出的suc都为true，则ok了，你的时长应该已经加了不少了。你可以更改脚本里的URL中的```$idxstart```与```$idxend```来继续刷更多的视频。这个idx是和每个视频页面的链接里的id对应的，如```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1093.html```
+若输出的suc都为true，那么就ok了，你的时长应该已经加了不少了:)
+
+如果你想刷更多的视频，你可以更改脚本里的URL中的```$idxstart```与```$idxend```。这个idx是和每个视频页面的链接里的id对应的，如```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1093.html```
 
 #### 刷法2：一个一个刷，更有操作感
 
