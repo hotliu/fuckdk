@@ -47,7 +47,9 @@ Win/Linux/MacOS都ok。然后你需要一个python3的环境。
 
 例如上边的命令中我们将ID在[1486,1540]之间的视频都刷了。
 
-这个idx是和每个视频页面的链接里的id对应的，如```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1486.html```
+这个idx是和每个视频页面的链接里的id对应的，比如这个链接
+
+```http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/1486.html```
 
 当然，你也可以只刷一个视频，只需要把start和end填同一个ID就好了。
 
