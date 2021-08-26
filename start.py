@@ -36,7 +36,7 @@ def myrequest(url):
     rtxt = response.text
     return rtxt   
 
-def fuck_a_dk(url):
+def fuck_one_dk(url):
     # 首先，我们抓取这个视频的页面
     content = myrequest(url)
     
@@ -85,10 +85,10 @@ def main():
     for _id in range(startid, endid + 1):
         try:
             pageurl = f"http://dxonline.ruc.edu.cn/index.php?s=/Index/vedio_cont/id/{_id}.html"
-            fuck_a_dk(pageurl)
+            fuck_one_dk(pageurl)
             print(f"the {pageurl} success!")
         except:
-            print(f"error while fuck {pageurl}")
+            print(f"error while fucking {pageurl}")
             traceback.print_exc()
 
 if __name__ == "__main__":
