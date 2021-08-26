@@ -47,7 +47,7 @@ def fuck_one_dk(url):
     tid = re.findall(r"tid:(.+?)},function",content)[0]
     hours = re.findall(r"var hours=\"(.+?)\";",content)[0]
     
-    # 然后, 我们需要装模作样地给它做一下页面初始化.
+    # 然后, 我们装模作样给它做一下页面初始化.
     av_sh = f'curl --location --request POST \'http://dxonline.ruc.edu.cn/index.php?s=/Index/add_videonum.html\' \
     --header \'Accept: */*\think \' \
     --header \'X-Requested-With: XMLHttpRequest\' \
@@ -64,7 +64,7 @@ def fuck_one_dk(url):
     print(d)
     ct = d['data']['create_time']
     
-    # 接下来，我们假装点过了三次
+    # 接下来，我们假装点过了中间弹出的三次按钮
     print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=2&ct={ct}"))
     print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=3&ct={ct}"))
     print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=4&ct={ct}"))
