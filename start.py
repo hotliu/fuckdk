@@ -20,7 +20,6 @@ PHPSESSID = "这里要填你的PHPSESSID"
 def myrequest(url):
     querystring = {}
     method = "GET"
-
     headers = {
         'upgrade-insecure-requests': "1",
         'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36",
@@ -33,26 +32,21 @@ def myrequest(url):
         'wyQiantai_name':wyQiantai_name,
         'wyQiantai_num':wyQiantai_num
     }
-
     response = requests.request(method, url, headers=headers, params=querystring, cookies=cookies)
     rtxt = response.text
-
-
     return rtxt   
-
 
 def fuck_a_dk(url):
     # 首先，我们抓取这个视频的页面
     content = myrequest(url)
-
-
+    
     # 我们从这个页面里抽几个id，用来伪造看完视频的请求。
     conid = re.findall(r"var conid=\"(.+?)\";",content)[0]
     sing = re.findall(r"var sing=\"(.+?)\";",content)[0]
     vid = re.findall(r"vid:(.+?),tid:",content)[0]
     tid = re.findall(r"tid:(.+?)},function",content)[0]
     hours = re.findall(r"var hours=\"(.+?)\";",content)[0]
-
+    
     # 然后, 我们需要装模作样地给它做一下页面初始化.
     av_sh = f'curl --location --request POST \'http://dxonline.ruc.edu.cn/index.php?s=/Index/add_videonum.html\' \
     --header \'Accept: */*\think \' \
@@ -63,18 +57,18 @@ def fuck_a_dk(url):
     --data-urlencode \'tid={tid}\' \
     --data-urlencode \'vid={vid}\''
     os.system(av_sh)
-
+    
     # 再然后，我们假装开始播放视频
     d = myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=1&ct=0")
     d = json.loads(d)
     print(d)
     ct = d['data']['create_time']
-
+    
     # 接下来，我们假装点过了三次
     print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=2&ct={ct}"))
     print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=3&ct={ct}"))
     print(myrequest(f"http://dxonline.ruc.edu.cn/index.php?s=/Videoclock/index.html&videokey={vid}&videonum=4&ct={ct}"))
-
+    
     # 最后，我们假装看完了
     p_sh = f"curl --location --request POST 'http://dxonline.ruc.edu.cn/index.php?s=/Index/gethours.html' \
         --header 'Accept: */*' --header 'X-Requested-With: XMLHttpRequest' --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) \
@@ -99,5 +93,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
