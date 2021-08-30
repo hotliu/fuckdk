@@ -10,9 +10,9 @@
 
 Win/Linux/MacOS都ok。
 
-然后你需要一个python3的环境。
+然后你需要一个**python3**的环境。
 
-用下边的命令装一下requests包。
+用下边的命令装一下```requests```包。
 
 ```pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple```
 
