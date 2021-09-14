@@ -58,3 +58,7 @@ Win/Linux/MacOS都ok。
 ## Notes
 
 你的Cookie过一段时间会过期的（你可以想象你用微人大，如果过好几个小时再刷新页面，往往也会让你重新登陆一下）。因此，**你如果一两天后想继续刷视频，你是需要重复第1-3步获取新PHPSESSID，然后填到代码里的！**
+
+## Links
+
+[党课观看器](https://github.com/fuckdk)
