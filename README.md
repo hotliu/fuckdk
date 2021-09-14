@@ -61,4 +61,5 @@ Win/Linux/MacOS都ok。
 
 ## Links
 
-[党课观看器](https://github.com/zhengyima/fuckdk)
+[自动抢课器](https://github.com/zhengyima/fuckxk)
+
